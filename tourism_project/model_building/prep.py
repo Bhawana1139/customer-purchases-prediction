@@ -28,12 +28,13 @@ df['ProductPitched'] = label_encoder.fit_transform(df['ProductPitched'])
 df['MaritalStatus'] = label_encoder.fit_transform(df['MaritalStatus'])
 df['Designation'] = label_encoder.fit_transform(df['Designation'])
 
-df['Gender'] = df['Gender'].str.strip().str.lower()
+df['Gender'] = df['Gender'].astype(str).str.strip().str.lower()
 df['Gender'] = df['Gender'].replace({
     'fe male': 'female',
     'female': 'female',
     'male': 'male'
 })
+
 
 # Define target variable
 target_col = 'ProdTaken'
