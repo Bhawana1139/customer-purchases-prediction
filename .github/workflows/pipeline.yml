@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: pip install pandas scikit-learn mlflow huggingface_hub
+        run: pip install pandas scikit-learn mlflow huggingface_hub xgboost
       - name: Start MLflow Server
         run: |
           nohup mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
