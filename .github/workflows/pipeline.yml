@@ -24,11 +24,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: <add_code_here>
+        run: pip install pandas scikit-learn huggingface_hub
+
       - name: Run Data Preparation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: <add_code_here>
+        run: python data_preparation.py
 
 
   model-traning:
@@ -37,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: <add_code_here>
+        run: pip install pandas scikit-learn mlflow huggingface_hub
       - name: Start MLflow Server
         run: |
           nohup mlflow ui --host 0.0.0.0 --port 5000 &  # Run MLflow UI in the background
@@ -45,7 +46,7 @@ jobs:
       - name: Model Building
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: <add_code_here>
+        run: python model_training.py
 
 
   deploy-hosting:
@@ -54,8 +55,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Dependencies
-        run: <add_code_here>
+        run: pip install huggingface_hub
       - name: Push files to Frontend Hugging Face Space
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: <add_code_here>
+        run: python hosting.py
