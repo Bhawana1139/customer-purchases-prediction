@@ -29,7 +29,7 @@ jobs:
       - name: Run Data Preparation
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: tourism_project/model_building/prep.py
+        run: python tourism_project/model_building/prep.py
 
 
   model-traning:
@@ -46,7 +46,7 @@ jobs:
       - name: Model Building
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: tourism_project/model_building/train.py
+        run: python tourism_project/model_building/train.py
 
 
   deploy-hosting:
