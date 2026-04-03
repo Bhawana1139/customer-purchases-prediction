@@ -31,6 +31,7 @@ Xtest = pd.read_csv(Xtest_path)
 ytrain = pd.read_csv(ytrain_path)
 ytest = pd.read_csv(ytest_path)
 
+print(ytest)
 
 # List of numerical features in the dataset
 numeric_features = [
