@@ -6,7 +6,7 @@ import joblib
 # Download and load the model from Hugging Face Hub
 model_path = hf_hub_download(
     repo_id="Bhawana12345/customer-purchases-prediction",
-    filename="best_customer_purchases_prediction_model_v1.joblib"
+    filename="best_customer_purchases_prediction_model_v1.joblib",
     repo_type="space"
 )
 model = joblib.load(model_path)
