@@ -143,7 +143,7 @@ with mlflow.start_run():
 
     # Upload to Hugging Face
     repo_id = "Bhawana12345/customer-purchases-prediction"
-    repo_type = "model"
+    repo_type = "space"
 
     # Step 1: Check if the space exists
     try:
