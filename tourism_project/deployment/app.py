@@ -22,7 +22,15 @@ Please enter the required information below to get a prediction.
 Age = st.number_input("Age", min_value=18, max_value=61, value=30, step=1)
 Gender = st.selectbox("Gender", ["male", "female"])
 TypeofContact = st.selectbox("TypeofContact", ["Company Invited", "Self Inquiry"])
-CityTier = st.selectbox("CityTier", ["Tier 1", "Tier 2", "Tier 3"])
+city_map = {
+    "Tier 1": 1,
+    "Tier 2": 2,
+    "Tier 3": 3
+}
+
+CityTier_label = st.selectbox("CityTier", ["Tier 1", "Tier 2", "Tier 3"])
+CityTier = city_map[CityTier_label]
+
 DurationOfPitch = st.number_input("DurationOfPitch",min_value=5, max_value=127, value=30, step=1)
 Occupation = st.selectbox("Occupation", ["Salaried" , "Small Business","Large Business","Free Lancer"])                              
 NumberOfTrips = st.number_input("NumberOfTrips", min_value=1, max_value=22, value=10, step=1)
