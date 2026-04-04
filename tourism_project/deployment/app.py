@@ -25,7 +25,7 @@ TypeofContact = st.selectbox("TypeofContact", ["Company Invited", "Self Inquiry"
 CityTier = st.selectbox("CityTier", ["Tier 1", "Tier 2", "Tier 3"])
 DurationOfPitch = st.number_input("DurationOfPitch",min_value=5, max_value=127, value=30, step=1)
 Occupation = st.selectbox("Occupation", ["Salaried" , "Small Business","Large Business","Free Lancer"])                              
-NumberOfTrips = st.number_input("NumberOfTrips", min_value=1, max_value=22, value=25, step=1)
+NumberOfTrips = st.number_input("NumberOfTrips", min_value=1, max_value=22, value=10, step=1)
 NumberOfPersonVisiting = st.number_input("NumberOfPersonVisiting", min_value=1, max_value=5, value=0, step=1)
 PreferredPropertyStar = st.number_input("PreferredPropertyStar", min_value=1, max_value=5, value=3, step=1)
 ProductPitched = st.selectbox("ProductPitched", ["Basic", "Standard", "Deluxe"])
