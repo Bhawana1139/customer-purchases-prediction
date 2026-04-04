@@ -38,8 +38,17 @@ NumberOfPersonVisiting = st.number_input("NumberOfPersonVisiting", min_value=1, 
 PreferredPropertyStar = st.number_input("PreferredPropertyStar", min_value=1, max_value=5, value=3, step=1)
 ProductPitched = st.selectbox("ProductPitched", ["Basic", "Standard", "Deluxe"])
 MaritalStatus= st.selectbox("MaritalStatus", ["Single", "Married", "Divorced"])
-Passport= st.selectbox("Passport", ["Yes", "No"])
-OwnCar= st.selectbox("OwnCar", ["Yes", "No"])
+yes_no_map = {
+    "Yes": 1,
+    "No": 0
+}
+
+OwnCar_label = st.selectbox("OwnCar", ["Yes", "No"])
+OwnCar = yes_no_map[OwnCar_label]
+
+Passport_label = st.selectbox("Passport", ["Yes", "No"])
+Passport = yes_no_map[Passport_label]
+
 PitchSatisfactionScore = st.number_input("PitchSatisfactionScore", min_value=1, max_value=5, value=2, step=1)
 NumberOfChildrenVisiting = st.number_input("NumberOfChildrenVisiting", min_value=0.0, max_value=5.0, value=0.0, step=0.1)
 Designation = st.selectbox("Designation", ["Executive", "Managerial", "Professional", "Other"])
